@@ -21,8 +21,8 @@ const Footer = () => {
 
 const styles = {
   wrapper:
-    "absolute bottom-0 bg-primary w-full h-auto py-[2rem] text-white  text-center",
-  innerWrapper: "flex flex-col container mx-auto gap-[1rem]  font-normal",
+    "w-full bg-primary mt-[100vp]  h-auto py-[2rem] text-white  text-center",
+  innerWrapper: "flex flex-col gap-[1rem]  font-normal",
   firstParagraph: "text-[3rem] font-semibold",
   secondParagraph: "text-[1.3rem] font-medium",
   thirdParagraph: "text-[.8rem] -mb-[2rem]",

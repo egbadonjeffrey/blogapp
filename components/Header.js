@@ -1,20 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useState } from "react";
-
-import ProfilePhoto from "../images/profile_pic.png";
-
-import { MediumContext } from "../context/MediumContext";
 
 import Logo from "../images/logo.png";
 import Button from "./Button";
+import NavMenu from "./NavMenu";
 
 const Header = () => {
-  const { auth } = useContext(MediumContext);
-  const [handleAuth, setHandleAuth] = useState(auth);
-
   return (
-    <div className={styles.navBar}>
+    <div className={styles.wrapper}>
       {/* Logo */}
       <div className={styles.logo}>
         <Link href="/">
@@ -23,63 +16,32 @@ const Header = () => {
           </a>
         </Link>
       </div>
-
-      {/* Navigation Menu */}
-
       <div className={styles.navigationMenu}>
-        <Link href="/about">
-          <a>
-            <Button id={"about"} value={"About"} isDisabled={false} />
-          </a>
-        </Link>
-        {handleAuth ? (
-          <>
-            <Link href="#">
-              <Button
-                id={"write"}
-                clickHandler={() => {
-                  setHandleAuth(true);
-                }}
-                value={"Write"}
-                isDisabled={false}
-              />
-            </Link>
+        {/* Navigation Menu */}
+        <NavMenu />
+      </div>
 
-            <Link href="">
-              <Image
-                className={styles.profilePhoto}
-                src={ProfilePhoto}
-                alt="Profile Photo"
-                width={50}
-                height={50}
-              />
-            </Link>
-          </>
-        ) : (
-          <>
-            <Link href="#">
-              <Button id={"signin"} value={"Sign In"} isDisabled={false} />
-            </Link>
-
-            <Link href="#">
-              <Button
-                id={"signup"}
-                value={"Sign Up"}
-                isDisabled={false}
-                clickHandler={() => {
-                  setHandleAuth(true);
-                }}
-              />
-            </Link>
-          </>
-        )}
+      <div className={styles.mobileMenu}>
+        <span className={styles.top}>top</span>
+        <span className={styles.middle}>middle</span>
+        <span className={styles.bottoms}>bottom</span>
       </div>
     </div>
   );
 };
 
 const styles = {
-  navBar: `
+  navigationMenu: `
+    hidden
+    md:block
+  `,
+
+  mobileMenu: `
+    block 
+    md:hidden
+  `,
+
+  wrapper: `
     container 
     flex 
     items-center 
@@ -93,14 +55,8 @@ const styles = {
 
   Link: `
     cursor-pointer
-    text-xl
-  `,
-  navigationMenu: `
-    flex 
-    items-center 
-    justify-end 
-    gap-[2rem] 
-    flex-end 
+    text-[1.5rem]
+    hover:text-[#ccc]
   `,
 };
 

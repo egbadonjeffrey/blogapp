@@ -11,7 +11,7 @@
 }
 
 /* link style of */
-#linkText:focus {
+.Link:focus {
   border-bottom: 2px solid #1C1C1C;
   width: auto;
 }

@@ -5,9 +5,9 @@ const Button = (props) => {
   return (
     <button
       id={props.id}
-      className={
-        props.buttonCustomStyle + `${styles.button}` + buttonEnableDisable
-      }
+      className={`
+        ${props.buttonCustomStyle} + ${styles.button} + ${buttonEnableDisable}
+      `}
       onClick={props.clickHandler}
       type={props.type}
       disabled={props.isDisabled}
