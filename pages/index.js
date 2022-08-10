@@ -7,8 +7,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   return (
     <div>
-      <Header />
-      <Footer />
+      <h1> HomePage </h1>
     </div>
   );
 }
