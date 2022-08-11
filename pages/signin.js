@@ -7,7 +7,7 @@ const SignIn = () => {
       <div className={styles.headingContainer}>
         <h1 className={styles.heading}>Welcome Back!</h1>
         <h4 className={styles.heading2}>
-          Sign in to sip from the well of knowledge
+          Sign in to sip from the fountain of knowledge
         </h4>
       </div>
 
@@ -46,6 +46,16 @@ const SignIn = () => {
           </Link>
         </div>
       </div>
+
+      <div className={styles.googleAuth}>
+        <Button
+          id={"googleauth"}
+          value={"Login With Google"}
+          isDisabled={false}
+          buttonCustomStyle={styles.googleButton}
+          // clickHandler={}
+        />
+      </div>
     </div>
   );
 };
@@ -77,15 +87,21 @@ const styles = {
         p-0
   `,
 
+  textAndLink: `
+      text-[1.2rem]
+      flex
+      gap-[1rem]
+  `,
+
   text: `
         hidden
         md:block
     `,
 
-  textAndLink: `
-      flex
-      gap-[1rem]
-  `,
+  Link: `
+      text-[#0000FF]
+      hover:text-primary
+    `,
 
   inputContainer: `
         flex

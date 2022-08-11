@@ -16,10 +16,12 @@ const styles = {
         flex
         flex-col
         justify-center
+        container
         mx-auto
         gap-[1rem]
         w-full
         bottom-0
+        
     `,
 };
 

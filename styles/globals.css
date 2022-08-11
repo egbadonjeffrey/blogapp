@@ -10,10 +10,27 @@
   font-family: 'Libre Baskerville', serif;
 }
 
+::-webkit-scrollbar {
+  background: #1C1C1C;
+  border: 1px solid #fff;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1C1C1C;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
 /* link style of */
 .Link:focus {
   border-bottom: 2px solid #1C1C1C;
   width: auto;
+}
+.scrollbar-medium::-webkit-scrollbar {
+  width: 5px
 }
 
 /* HERO BANNER */
