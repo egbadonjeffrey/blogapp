@@ -1,9 +1,30 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
 import AboutAuthor from "../../components/AboutAuthor";
+import { MediumContext } from "../../context/MediumContext";
 
 import PostThumbnail from "../../images/dj_kit.png";
 
-const SinglePost = ({ id, title, body, date, author }) => {
+const SinglePost = () => {
+  const [article, setArticle] = useState([]);
+
+  const { posts } = useContext(MediumContext);
+  const router = useRouter();
+
+  const { id, title, body, author, authorImage, date } = posts;
+
+  // useEffect(() => {
+  //   if (post.length === 0) {
+  //     return;
+  //   }
+
+  //   setArticle(post.find((singlePost) => singlePost.id === router.query.slug));
+  // });
+
+  // console.log(router.query.slug, "Slug id");
+
+  // console.log(post.length);
   return (
     <div>
       <div className={styles.postDetails}>
@@ -15,28 +36,24 @@ const SinglePost = ({ id, title, body, date, author }) => {
             alt="post Thumbnail"
           />
         </div>
-        <div className={styles.postTitle}>{title}</div>
+        <div className={styles.postTitle}>
+          <h1> {title} </h1>
+        </div>
         <div className={styles.postAuthorNameAndDate}>
           <p>{author}|</p>
-          <p>May 7, 2019</p>
+          <p> {date} </p>
           <p>(10 mins read)</p>
         </div>
 
         <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-            necessitatibus fuga mollitia, molestiae neque, doloremque dolore
-            suscipit reprehenderit consectetur temporibus perspiciatis. Quo
-            dolore dolorem neque accusamus atque consectetur quibusdam, laborum
-            alias magni voluptates quia fugit. Quam praesentium ut saepe quo
-            dolores dolore temporibus laudantium impedit. Rerum quidem nobis
-            illo deleniti.
-          </p>
+          <p>{body}</p>
         </div>
       </div>
-      <AboutAuthor />
+      <AboutAuthor authorImage={authorImage} />
     </div>
   );
 };
+
+const styles = {};
 
 export default SinglePost;
