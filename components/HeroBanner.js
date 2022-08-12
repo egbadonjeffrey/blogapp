@@ -1,18 +1,22 @@
-// import
+import stylesSpecial from "../styles/Home.module.css";
 
-const HeroBanner = (props) => {
-  const [isDesktop, setDesktop] = useState();
+import { useState } from "react";
+
+const HeroBanner = ({ backgroundImage, alignArticle }) => {
+  const [isDesktop, setDesktop] = useState(null);
 
   return (
-    <div className={styles.backgroundImage}>
-      <div className={styles.article}>
-        <h4>Featured Article</h4>
-        <h2> </h2>
-        <div>
+    <div className={`${backgroundImage} topBackground`}>
+      <div className={`${alignArticle} + ${styles.article}`}>
+        <h4 className={styles.featuredArticle}>Featured Article</h4>
+        <h2 className={styles.articleTitle}>
+          {"World's"} Most Dangerous Technology Ever Made{" "}
+        </h2>
+        <div className={styles.authorNameAndDate}>
           <p>Egbadon Jeffrey</p>
           <p>15 Aug, 2022</p>
         </div>
-        <p>
+        <p className={styles.articleBody}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tempore
           tenetur ipsum beatae iure vitae quam. Dolore laborum iusto reiciendis
           totam! Dolores saepe nisi repellat hic dicta alias, magnam architecto.
@@ -23,7 +27,45 @@ const HeroBanner = (props) => {
 };
 
 const styles = {
-  backgroundImage: URL("../images/dj_kit.png"),
+  backgroundImage: `
+    relative
+  `,
+
+  article: `
+    w-[50%]
+    h-[90%]
+    container
+    ml-[2rem]
+    px-[2rem]
+    bg-white
+    absolute
+  `,
+
+  featuredArticle: `
+    text-[1.5rem]
+    font-medium
+    text-[#1c1c1c50]
+  `,
+
+  articleTitle: `
+    text-[2rem]
+    font-semibold
+    text-primary
+  `,
+
+  authorNameAndDate: `
+    flex
+    flex-row
+    text-[1.5rem]
+    text-[#1c1c1c50]
+    gap-[.3rem]
+    capitalize
+  `,
+
+  articleBody: `
+    text-[1.2rem]
+
+  `,
 };
 
 export default HeroBanner;

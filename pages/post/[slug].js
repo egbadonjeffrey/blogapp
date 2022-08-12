@@ -3,7 +3,7 @@ import AboutAuthor from "../../components/AboutAuthor";
 
 import PostThumbnail from "../../images/dj_kit.png";
 
-const Post = () => {
+const SinglePost = ({ id, title, body, date, author }) => {
   return (
     <div>
       <div className={styles.postDetails}>
@@ -15,11 +15,9 @@ const Post = () => {
             alt="post Thumbnail"
           />
         </div>
-        <div className={styles.postTitle}>
-          The {`World's`} Most Dangerous Technology Ever Made
-        </div>
+        <div className={styles.postTitle}>{title}</div>
         <div className={styles.postAuthorNameAndDate}>
-          <p>Ralph Hawkins |</p>
+          <p>{author}|</p>
           <p>May 7, 2019</p>
           <p>(10 mins read)</p>
         </div>
@@ -41,4 +39,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default SinglePost;
