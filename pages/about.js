@@ -1,7 +1,9 @@
+import AboutAuthor from "../components/AboutAuthor";
+
 const About = () => {
   return (
     <div>
-      <h1>About Us</h1>
+      <AboutAuthor />
     </div>
   );
 };

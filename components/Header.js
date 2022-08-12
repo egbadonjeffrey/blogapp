@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+import { AiOutlineMenu } from "react-icons/ai";
 
 import Logo from "../images/logo.png";
 import Button from "./Button";
@@ -8,7 +11,6 @@ import NavMenu from "./NavMenu";
 const Header = () => {
   return (
     <div className={styles.wrapper}>
-      {/* Logo */}
       <div className={styles.logo}>
         <Link href="/">
           <a className={styles.Link}>
@@ -17,14 +19,11 @@ const Header = () => {
         </Link>
       </div>
       <div className={styles.navigationMenu}>
-        {/* Navigation Menu */}
         <NavMenu />
       </div>
 
-      <div className={styles.mobileMenu}>
-        <span className={styles.top}>top</span>
-        <span className={styles.middle}>middle</span>
-        <span className={styles.bottoms}>bottom</span>
+      <div>
+        <AiOutlineMenu className={styles.mobileMenu} />
       </div>
     </div>
   );
@@ -39,6 +38,8 @@ const styles = {
   mobileMenu: `
     block 
     md:hidden
+    w-[4rem]
+    h-[2rem]
   `,
 
   wrapper: `
