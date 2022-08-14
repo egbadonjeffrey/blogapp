@@ -10,8 +10,6 @@ export default function Home() {
 
   const [bottom, setBottom] = useState(false);
 
-  // console.log(post);
-
   return (
     <div>
       <HeroBanner
@@ -20,7 +18,7 @@ export default function Home() {
       />
       <h1 className={styles.articlesHeader}> Articles </h1>
 
-      {}
+      <PostCard post={post} />
 
       <HeroBanner
         backgroundImage={stylesSpecial.bottomBackground}

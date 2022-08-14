@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState } from "react";
-import Modal from "react-modal";
-import { useRouter } from "next/router";
 
 import Button from "./Button";
 
@@ -11,10 +9,7 @@ import ProfilePhoto from "../images/profile_pic.png";
 import { MediumContext } from "../context/MediumContext";
 import PostModal from "./PostModal";
 
-Modal.setAppElement("#__next");
-
 const NavMenu = () => {
-  const router = useRouter();
   const { auth } = useContext(MediumContext);
   const [handleAuth, setHandleAuth] = useState(auth);
   return (
@@ -59,15 +54,7 @@ const NavMenu = () => {
             />
           </Link>
 
-          <div>
-            <Modal
-              className={styles.modalWrapper}
-              isOpen={Boolean(router.query.menu)}
-              onRequestClose={() => router.push("/")}
-            >
-              <PostModal />
-            </Modal>
-          </div>
+          <div></div>
         </>
       ) : (
         <>
@@ -107,21 +94,6 @@ const styles = {
   flex-row
   items-center 
   gap-[2rem] 
-    `,
-
-  modalWrapper: `
-  flex
-  absolute
-  right-0
-  justify-center
-  bg-[#1c1c1c]
-  text-white
-  text-left
-  text-[2rem]
-  font-semibold
- w-[50%]
- h-[50rem]
-      
     `,
 };
 

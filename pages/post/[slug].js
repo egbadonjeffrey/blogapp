@@ -12,8 +12,6 @@ const SinglePost = () => {
   const { posts } = useContext(MediumContext);
   const router = useRouter();
 
-  const { id, title, body, author, authorImage, date } = posts;
-
   // useEffect(() => {
   //   if (post.length === 0) {
   //     return;
@@ -36,20 +34,16 @@ const SinglePost = () => {
             alt="post Thumbnail"
           />
         </div>
-        <div className={styles.postTitle}>
-          <h1> {title} </h1>
-        </div>
+        <div className={styles.postTitle}>{/* <h1> {title} </h1> */}</div>
         <div className={styles.postAuthorNameAndDate}>
-          <p>{author}|</p>
-          <p> {date} </p>
+          {/* <p>{author}|</p> */}
+          {/* <p> {date} </p> */}
           <p>(10 mins read)</p>
         </div>
 
-        <div>
-          <p>{body}</p>
-        </div>
+        <div>{/* <p>{body}</p> */}</div>
       </div>
-      <AboutAuthor authorImage={authorImage} />
+      {/* <AboutAuthor authorImage={authorImage} /> */}
     </div>
   );
 };

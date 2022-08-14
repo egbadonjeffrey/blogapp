@@ -6,7 +6,7 @@ const HeroBanner = ({ backgroundImage, alignArticle }) => {
   const [isDesktop, setDesktop] = useState(null);
 
   return (
-    <div className={`${backgroundImage} topBackground`}>
+    <div className={`${backgroundImage}`}>
       <div className={`${alignArticle} + ${styles.article}`}>
         <h4 className={styles.featuredArticle}>Featured Article</h4>
         <h2 className={styles.articleTitle}>
@@ -32,7 +32,8 @@ const styles = {
   `,
 
   article: `
-    w-[50%]
+    md:w-[50%]
+    w-[90%]
     h-[90%]
     container
     ml-[2rem]
